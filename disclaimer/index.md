@@ -1,0 +1,22 @@
+---
+title: Disclaimer
+author: geo
+layout: page
+---
+I figure since this website is host to some employment essential data (like a r&#233;sum&#233;), I feel it is also necessary to throw up a little bit of text to disclaim potential readers. 
+
+This site is a relatively unedited and unfiltered litany of my views on any number of topics. Its intent is never to harass, slander or otherwise besmirch anyone else&#8217;s character, *except when that is expressly indicated*. At no time do I expect that anyone will be tied down, have their eyelids propped open and be forced to read any of this drivel. As such, by continuing to read through these posts and their content, you are **expressly** removing any liability I may have otherwise had if you find this content offensive or not to your personal tastes. If you don&#8217;t like it, move on. I won&#8217;t be offended, I promise.
+
+Furthermore, any content found here, be it written or graphical in nature, is my own creation and I am the sole copyright holder. When images, style sheets or content is used from another location or from another entity, it will be **at minimum** credited to the appropriate party, and at best, used with their express permission. You&#8217;ll find those credits listed in the [Credits page][1]. Further unauthorized use of either my own or someone else&#8217;s copyrighted materials is forbidden. No, in general, I don&#8217;t have the means to track you down and prosecute you for unauthorized use, but it is bad karma, and your soul could be resurrected as a steamy pile of excrement should you go down that road. 
+
+Finally, if you&#8217;re coming here as a potential employer wanting to find my CV, then please understand that the information you find here is a window into my personal views. Although content may occasionally pertain to my professional life and my employers, I trust you will not hold &#8220;having an opinion&#8221; against me.
+
+Peace.
+
+<div class="addtoany_share_save_container addtoany_content_bottom">
+  <div class="a2a_kit a2a_kit_size_32 a2a_target addtoany_list" id="wpa2a_85">
+    <a class="a2a_button_tumblr" href="http://www.addtoany.com/add_to/tumblr?linkurl=http%3A%2F%2Fgeo.trippy.org%2Fdisclaimer%2F&linkname=Disclaimer" title="Tumblr" rel="nofollow" target="_blank"></a><a class="a2a_button_twitter_tweet addtoany_special_service" data-count="none" data-url="http://geo.trippy.org/disclaimer/" data-text="Disclaimer"></a><a class="a2a_button_google_plusone addtoany_special_service" data-annotation="none" data-href="http://geo.trippy.org/disclaimer/"></a><a class="a2a_button_google_plus" href="http://www.addtoany.com/add_to/google_plus?linkurl=http%3A%2F%2Fgeo.trippy.org%2Fdisclaimer%2F&linkname=Disclaimer" title="Google+" rel="nofollow" target="_blank"></a><a class="a2a_dd addtoany_share_save" href="http://www.addtoany.com/share_save"><img src="http://geo.trippy.org/wp-content/plugins/add-to-any/share_save_120_16.png" width="120" height="16" alt="Share" /></a>
+  </div>
+</div>
+
+ [1]: http://geo.trippy.org/?page_id=95
