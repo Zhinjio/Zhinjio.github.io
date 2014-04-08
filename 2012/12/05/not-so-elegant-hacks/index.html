@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>not so elegant hacks</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">Théâtre Insomniaque</a></h1>
+            <a class="extra" href="/">home</a>
+          </div>
+
+          <h2>not so elegant hacks</h2>
+<p class="meta">05 Dec 2012</p>
+
+<div class="post">
+<p>Some time ago, I went through, as I do on a semi-regular basis, and updated passwords on everything I could remember. I have tools for this. The tools are very good at making things random and hard to guess or hack. They let me specify the types of characters that should appear in them, and how long they should be, and all kinds of funny rules to consider.</p>
+
+<p>This time, I decided to also update the passwords on my DSL modem at home. The maker is Actiontec, although ultimately that isn&#8217;t relevant. On the password screen, they accept any character on the password screen, and entries of any length. Given that, I chose my 16 character mixed profile, which is pretty much the strongest one I generally use. A very few sites/apps accept longer ones, but not usually. The dialog accepted my new password, and saved it, and since I was also experiencing some port connection issues at the time, I decided to reset the modem. No problem, everything came right back up minutes later, and I was good to go.</p>
+
+<p>I popped back onto the admin page for the modem, and was going to login to verify that the memory usage was back down to nominal levels. What&#8217;s this? An error??? Let&#8217;s see here&#8230; &#8220;Your password cannot exceed 15 characters in length&#8221;. WHAT??? It let me enter 16 characters when it asked. How can the login screen only take 15? So then I think, ok&#8230; maybe it automatically chopped the final character off? Nope. Maybe it chopped the first character off? (Ok, I admit thats kind of out of the realm of reality, but I&#8217;m getting desperate here)&#8230; Nope. After trying many different further combinations, including my old password, ALL CAPS, no caps, etc, I decided to do a little more poking around. Fire up the firefox debugger, and look at the code evaluating on this page. Sure enough, there is a routine in the javascript there that is validating my input on that page, and checking to see that the input &lt;= 15 characters. Ugh.</p>
+
+<p>So, I realize at this point that I could reset the modem back to factory defaults, and go ahead and reconfigure my custom settings. I have some specific port maps setup and this is generally a big pain in the butt, so I decide to try contacting their support first. Hit the webpage, leave a message with my email address, and await my reply. A few days later, they do so, indicating that the login page should be able to accept any password length that the password reset script would have allowed, and that I should check to make sure I&#8217;m typing correctly.</p>
+
+<p>o.O<br />
+O.o</p>
+
+<p>Really? Um, ok. That is like asking me if the power cord is plugged in. They indicate there is no &#8220;backdoor&#8221; and that I need to reset the modem to defaults in order to resolve, thank you for playing, we&#8217;re considering this issue resolved, and please don&#8217;t ask us any more of your stupid questions. kthxbye.</p>
+
+<p>Alright, so now I get back in and try all the things I did before, thinking&#8230;ok, maybe they&#8217;re right, I just typed it wrong, and went through all the usual logical steps that I could have accidentally done things incorrectly, and I get the same result. As a last ditch effort, I go in and check the code again, except this time, I&#8217;m going to try and play with the values. Once again in the debugger I enable a breakpoint in the javascript, and start stepping through the code, watching the values of several different variables I see defined to see how it manipulates things before it finally submits the form. This time, I leave off the final character (going back to a 15 character, allowed value), and step it past the check that was previously failing. It does some more manipulation of the username, password, the current ip address, etc, and then sets that big long string into a new variable just before submitting. So just before the exit, I go back into that variable, and add my character back, by hand, in the debugger console. Click &#8220;Run&#8221; and close my eyes a bit. Wait 5 seconds&#8230; open my eyes&#8230; I&#8217;m logged in!</p>
+
+<p>Every once in awhile, all the crap I went to school for actually comes in handy. No, not the most elegant hack, but it got the job done. </p>
+
+<div class="addtoany_share_save_container addtoany_content_bottom">
+  <div class="a2a_kit a2a_kit_size_32 a2a_target addtoany_list" id="wpa2a_240">
+    <a class="a2a_button_tumblr" href="http://www.addtoany.com/add_to/tumblr?linkurl=http%3A%2F%2Fgeo.trippy.org%2F2012%2F12%2F05%2Fnot-so-elegant-hacks%2F&amp;linkname=not%20so%20elegant%20hacks" title="Tumblr" rel="nofollow" target="_blank"></a><a class="a2a_button_twitter_tweet addtoany_special_service" data-count="none" data-url="http://geo.trippy.org/2012/12/05/not-so-elegant-hacks/" data-text="not so elegant hacks"></a><a class="a2a_button_google_plusone addtoany_special_service" data-annotation="none" data-href="http://geo.trippy.org/2012/12/05/not-so-elegant-hacks/"></a><a class="a2a_button_google_plus" href="http://www.addtoany.com/add_to/google_plus?linkurl=http%3A%2F%2Fgeo.trippy.org%2F2012%2F12%2F05%2Fnot-so-elegant-hacks%2F&amp;linkname=not%20so%20elegant%20hacks" title="Google+" rel="nofollow" target="_blank"></a><a class="a2a_dd addtoany_share_save" href="http://www.addtoany.com/share_save"><img src="http://geo.trippy.org/wp-content/plugins/add-to-any/share_save_120_16.png" width="120" height="16" alt="Share" /></a>
+  </div>
+</div>
+
+</div>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Your Name<br />
+                What You Are<br />
+                you@example.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>EC2</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">Théâtre Insomniaque</a></h1>
+            <a class="extra" href="/">home</a>
+          </div>
+
+          <h2>EC2</h2>
+<p class="meta">05 Sep 2011</p>
+
+<div class="post">
+<p>So <a title="Amazon Web Services" href="http://aws.amazon.com/" target="_blank">Amazon (Web Services)</a> has a service called EC2, which is essentially their hosting service. Due to some stuff I&#8217;m working on at work, I have been taking a look at what kinds of service automation are possible, and that led me to look at EC2.<!--more--></p>
+
+<p>So the first thing that is interesting to me is that their hosting model is based *entirely* on usage of their resources. Which, I mean, that makes sense, right? Assuming you can commoditize all the pieces of it in some kind of meaningful way. Storage, CPU, RAM, etc&#8230; assuming you can assign per minute/hour/day kinds of numbers to that. And if you aren&#8217;t running some kind of major site that gets monstrous hits or requires huge storage, I can see this model being VERY attractive.</p>
+
+<p>I&#8217;m making an attempt to map some of the websites I have to this sort of model, and see what might make sense to move over to that.</p>
+
+<p>Further reading on the subject shows the possibility of using their S3 storage buckets for static websites as well. There is a huge community and effort among tech folks to use this sort of solution. All kinds of little mini-projects and products being developed to take things that would normally be very dynamic content (like say, this blog), and host it in a static form. It removes a HUGE amount of overhead with all the blog software and CPU intensive stuff if you can swing it.</p>
+
+<p>That reading also led me down the road of website optimization. Wow. So I&#8217;ve been living under a rock for a few years, apparently.</p>
+
+<p>Long story short: I&#8217;m going to be throwing up some blog posts describing and/or documenting some of my travels down the road of using EC2 with some of the above goals. We&#8217;ll see what comes of it.</p>
+
+<div class="addtoany_share_save_container addtoany_content_bottom">
+  <div class="a2a_kit a2a_kit_size_32 a2a_target addtoany_list" id="wpa2a_203">
+    <a class="a2a_button_tumblr" href="http://www.addtoany.com/add_to/tumblr?linkurl=http%3A%2F%2Fgeo.trippy.org%2F2011%2F09%2F05%2Fec2%2F&amp;linkname=EC2" title="Tumblr" rel="nofollow" target="_blank"></a><a class="a2a_button_twitter_tweet addtoany_special_service" data-count="none" data-url="http://geo.trippy.org/2011/09/05/ec2/" data-text="EC2"></a><a class="a2a_button_google_plusone addtoany_special_service" data-annotation="none" data-href="http://geo.trippy.org/2011/09/05/ec2/"></a><a class="a2a_button_google_plus" href="http://www.addtoany.com/add_to/google_plus?linkurl=http%3A%2F%2Fgeo.trippy.org%2F2011%2F09%2F05%2Fec2%2F&amp;linkname=EC2" title="Google+" rel="nofollow" target="_blank"></a><a class="a2a_dd addtoany_share_save" href="http://www.addtoany.com/share_save"><img src="http://geo.trippy.org/wp-content/plugins/add-to-any/share_save_120_16.png" width="120" height="16" alt="Share" /></a>
+  </div>
+</div>
+
+</div>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Your Name<br />
+                What You Are<br />
+                you@example.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>

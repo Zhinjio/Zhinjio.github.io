@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Static site hosting with S3</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">Théâtre Insomniaque</a></h1>
+            <a class="extra" href="/">home</a>
+          </div>
+
+          <h2>Static site hosting with S3</h2>
+<p class="meta">06 Sep 2011</p>
+
+<div class="post">
+<p>If you go around EC2, and just use the S3 storage facilities, there&#8217;s a lot to be gained here. The huge caveat is that you&#8217;re not dealing with a fully functional, cgi-enabled, php or other dynamic generated thing. This is just a raw mapping of files to an very simple httpd daemon. Thats it. Nothing else. So all said, your whole site has to be static content, with no funky stuff.<!--more--></p>
+
+<p>So how might you take something like a blog, and turn that into static content? Interesting you should ask. Below find several links that I&#8217;ve hit on my search down this road:</p>
+
+<p><a href="http://highscalability.com/blog/2011/8/22/strategy-run-a-scalable-available-and-cheap-static-site-on-s.html">Original post I was just reading in my daily travels</a> which linked me to: <a href="http://www.allthingsdistributed.com/2011/02/website_amazon_s3.html">Werner Vogels&#8217; blog post</a> and the <a href="http://www.allthingsdistributed.com/2011/02/weblog_in_amazon_s3.html">follow-on post.</a> The method detailed in those two posts is outside of wordpress entirely. I have alot of content already invested in wordpress (as many do), so investigation followed on how to convert wordpress into a static site. If you are intending to archive your wordpress site, and no longer post to it, there is <a href="http://mossiso.com/code/make-wordpress-static">this sort of option</a>. That wasn&#8217;t really my intent, however. For a more pragmatic solution, assuming you still want to blog actively, there is <a href="http://wordpress.org/extend/plugins/really-static/">this road</a>. I&#8217;m going to give that a try over the coming week or so and see if I can get it all working nicely.</p>
+
+<p>One other thought occurred to me too. What if I ran my wordpress install on my machine at home (not visible to the internet), and did all my posting and whatnot on there. Whenever I wanted to push new content, I run it through some combination of the above mentioned tools, and push that to S3. Boom, done. It remains to be seen whether this is reasonable or viable. I mean, you lose one of the most powerful aspects of this&#8230; that you can theoretically blog from ANYWHERE. With what I just mentioned, I can pretty much only do it from a machine that I have setup with that &#8220;generator&#8221; configuration, be it a laptop or home machine or whatever. Not from my phone, not from an ipad, etc. Definitely limited. Not that I ever did that anyway, but after this, I wouldn&#8217;t be able to at all.</p>
+
+<p>Another point, since I&#8217;ve had inquiries&#8230; why would I want to do this? I&#8217;ll summarize:</p>
+
+<ul>
+  <li>SECURITY: Blogging, WordPress and other content management systems like it expose you to attack. There are new methods for compromising these sorts of systems being discovered seemingly every week. Even a <a href="http://wordpress.org/news/category/security/">very cursory glance</a> at WordPress&#8217; releases shows a significant number related to security issues. Pushing the dynamic content to a static site removes the need for that level of security.</li>
+  <li>SPEED: Static content is FAST. Anytime you request a page, it just dishes out files. With a &#8220;default&#8221; WordPress installation, every time you request a page, CPU resources are chewed up on your host site dynamically generating that content with every click. Content being static radically reduces the CPU and memory overhead required.</li>
+  <li>EFFICIENCY: Static content can be &#8220;pushed to the edge&#8221;. A very common tactic for the highest levels of website optimization is to take advantage of Content Delivery Networks (CDN&#8217;s) like <a href="http://aws.amazon.com/cloudfront/">Amazon Cloudfront</a> and <a href="http://www.akamai.com/">Akamai</a>. When you do this, the files you are serving are replicated to a whole mess of servers around the Internet, and then delivered to the requester from whichever one of those servers is geographically closest (or fastest). Granted, this is typically *not* done for just people&#8217;s blogs, and only for sites which are dealing with millions of hits/day, but since it is an integrated service with EC2, its something easy to consider for not much additional cost.</li>
+  <li>SOE: Static content is much easier for search engines to crawl and link to. Since the static site is essentially the equivalent of an &#8220;archive&#8221; for your content, any marketing efforts you make to monetize your content or at least turn up more frequently in search engines has very long term URLs to point to.</li>
+</ul>
+
+<p>More to come&#8230;</p>
+
+<div class="addtoany_share_save_container addtoany_content_bottom">
+  <div class="a2a_kit a2a_kit_size_32 a2a_target addtoany_list" id="wpa2a_205">
+    <a class="a2a_button_tumblr" href="http://www.addtoany.com/add_to/tumblr?linkurl=http%3A%2F%2Fgeo.trippy.org%2F2011%2F09%2F06%2Fstatic-site-hosting-with-s3%2F&amp;linkname=Static%20site%20hosting%20with%20S3" title="Tumblr" rel="nofollow" target="_blank"></a><a class="a2a_button_twitter_tweet addtoany_special_service" data-count="none" data-url="http://geo.trippy.org/2011/09/06/static-site-hosting-with-s3/" data-text="Static site hosting with S3"></a><a class="a2a_button_google_plusone addtoany_special_service" data-annotation="none" data-href="http://geo.trippy.org/2011/09/06/static-site-hosting-with-s3/"></a><a class="a2a_button_google_plus" href="http://www.addtoany.com/add_to/google_plus?linkurl=http%3A%2F%2Fgeo.trippy.org%2F2011%2F09%2F06%2Fstatic-site-hosting-with-s3%2F&amp;linkname=Static%20site%20hosting%20with%20S3" title="Google+" rel="nofollow" target="_blank"></a><a class="a2a_dd addtoany_share_save" href="http://www.addtoany.com/share_save"><img src="http://geo.trippy.org/wp-content/plugins/add-to-any/share_save_120_16.png" width="120" height="16" alt="Share" /></a>
+  </div>
+</div>
+
+
+</div>
+
+
+          <div class="footer">
+            <div class="contact">
+              <p>
+                Your Name<br />
+                What You Are<br />
+                you@example.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>
